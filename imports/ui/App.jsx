@@ -12,20 +12,20 @@ import {Tabs, Tab}  from 'material-ui/Tabs';
 
 //custom
 import { Events } from '../api/Events.js';
-import Event from './Event.jsx';
 import {EventListContainer} from '/imports/containers/EventListContainer';
 
 class App extends Component {
     render() {
         return (
             <Tabs>
-              <Tab icon={<FontIcon className="material-icons">ic_assignment</FontIcon>} 
+              <Tab icon={<FontIcon className="material-icons">ic_assignment</FontIcon>}
                    label="EVENTS LIST">
                    <EventListContainer />
-              </Tab>          
+              </Tab>
             </Tabs>
         );
     }
 }
 
 export default App;
+

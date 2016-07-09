@@ -3,6 +3,7 @@ import {mount} from 'react-mounter';
 
 import {AppLayout} from '/client/main';
 import App from '/imports/ui/App';
+import EventSingle from '/imports/ui/EventSingle';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -15,4 +16,13 @@ FlowRouter.route('/', {
 			content: (<App />)
 		});
 	}
+});
+
+FlowRouter.route('/event/:_id', {
+    name: 'Event',
+    action(params) {
+        mount(AppLayout, {
+            content: (<EventSingle eventId={params._id}/>)
+        });
+    }
 });
