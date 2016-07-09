@@ -8,16 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import App from '/imports/ui/App.jsx';
 
 
-const RenderApp = () => (
+export const AppLayout = ({content}) => (
 	<MuiThemeProvider muiTheme={getMuiTheme()}>
-		<App />
+		{content}
 	</MuiThemeProvider>
 );
-
-
-Meteor.startup(() => {
-	render(
-	  <RenderApp />,
-	  document.getElementById('app')
-	);
-});
