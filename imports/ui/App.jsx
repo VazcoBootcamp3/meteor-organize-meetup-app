@@ -16,6 +16,7 @@ injectTapEventPlugin();
 //custom
 import { Events } from '../api/Events.js';
 import Event from './Event.jsx';
+import {EventListContainer} from '/imports/containers/EventListContainer';
 
 class App extends Component {
 
@@ -47,31 +48,13 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
-                <header>
-                      <form className="" onSubmit={this.handleSubmit.bind(this)} >
-                            <input
-                              type="text"
-                              ref="textInput"
-                              placeholder="Type to add new event"
-                            />
-                      </form>
-                </header>
-
-                <ul>
-                    {this.renderEvents()}
-                </ul>
-            </div>
+            <div><EventListContainer /></div>
         );
     }
 }
 
-App.propTypes = {
-    events: PropTypes.array.isRequired
-};
+// App.propTypes = {
+//     events: PropTypes.array.isRequired
+// };
 
-export default createContainer(() => {
-    return {
-        events: Events.find({}, { sort: { createdAt: -1 } }).fetch()
-    };
-}, App);
+export default App;
